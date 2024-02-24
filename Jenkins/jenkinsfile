@@ -1,0 +1,23 @@
+pipeline{
+    agent any
+    stages{
+        stage("update server"){
+            steps{
+                sh 'sudo apt-get update -y'
+                sh 'sudo apt-get upgrade -y'
+            }
+        }
+        stage("installation of tools"){
+            steps{
+                sh 'sudo apt-get install git -y'
+                sh 'sudo apt-get install nginx -y'
+            }
+        }
+        stage("get versions"){
+            steps{
+                sh 'sudo git --version'
+                sh 'sudo nginx --version'
+            }
+        }
+    }
+}
