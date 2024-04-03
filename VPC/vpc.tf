@@ -44,6 +44,7 @@ resource "aws_route_table" "test-route-table-private" {
 resource "aws_subnet" "test-public" {
   vpc_id = aws_vpc.test-aws_vpc.id
   cidr_block = "10.0.1.0/24"
+  map_public_ip_on_launch = null
   tags = {
     Name = "test-public"
     env = "test"
@@ -53,6 +54,7 @@ resource "aws_subnet" "test-public" {
 resource "aws_subnet" "test-private" {
   vpc_id = aws_vpc.test-aws_vpc.id
   cidr_block = "10.0.2.0/24"
+  map_public_ip_on_launch = false
   tags = {
     Name = "test-private"
     env = "test"
