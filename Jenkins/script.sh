@@ -1,6 +1,5 @@
 #!/bin/bash
 
-sudo -i
 echo "Starting update of server"
 sudo apt-get update -y
 sudo apt-get upgrade -y
